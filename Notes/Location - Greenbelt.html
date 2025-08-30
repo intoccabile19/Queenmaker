@@ -9097,9 +9097,11 @@
         }
     </style>
     <script
-        defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }</script>
-        <script async=""
-            src="https://raw.githubusercontent.com/mProjectsCode/obsidian-meta-bind-plugin/master/Publish.js"></script>
+        defer="">async function loadIncludes() { let e = document.querySelectorAll("link[itemprop='include']"); for (const t of e) { let e = t.getAttribute("href"); try { let o = ""; if (e.startsWith("https:") || e.startsWith("http:") || "file:" != window.location.protocol) { const n = await fetch(e); if (!n.ok) { console.log("Could not include file: " + e), t?.remove(); continue } o = await n.text() } else { const t = document.getElementById(btoa(encodeURI(e))); if (t) { const e = JSON.parse(decodeURI(atob(t.getAttribute("value") ?? ""))); o = e?.data ?? "" } } let n = document.createRange().createContextualFragment(o); t.before(n), t.remove(), console.log("Included text: " + o), console.log("Included file: " + e) } catch (o) { t?.remove(), console.log("Could not include file: " + e, o); continue } } } document.addEventListener("DOMContentLoaded", (() => { loadIncludes() })); let isFileProtocol = "file:" == location.protocol; function waitLoadScripts(e, t) { let o = e.map((e => document.getElementById(e + "-script"))); !function e(n) { let l = o[n], c = n + 1; l ? (l && "true" != l.getAttribute("loaded") || n < o.length && e(c), n < o.length && l.addEventListener("load", (() => e(c)))) : n < o.length ? e(c) : t() }(0) }
+    </script>
+    <script async=""
+        src="https://raw.githubusercontent.com/mProjectsCode/obsidian-meta-bind-plugin/master/Publish.js">
+    </script>
 </head>
 
 <body class="publish css-settings-manager show-inline-title show-ribbon is-focused">
